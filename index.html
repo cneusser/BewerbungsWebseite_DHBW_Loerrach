@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Neusser – Bewerbung Professuren W2 BWL | DHBW Lörrach</title>
+  <style>
+    :root {
+      --navy:  #1A3A5C;
+      --teal:  #0D7EA0;
+      --gold:  #E8A020;
+      --light: #F4F7FA;
+      --text:  #2C2C2C;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── NAVIGATION ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--navy);
+      z-index: 1000;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .nav-logo {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    /* Always-Hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px; height: 20px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,8px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-8px); }
+
+    .nav-menu {
+      display: none;
+      position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: var(--navy);
+      flex-direction: column;
+      padding: 1rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .nav-menu.open { display: flex; }
+    .nav-menu a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      font-size: 0.95rem;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav-menu a:hover {
+      background: rgba(255,255,255,0.08);
+      border-left-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────────────── */
+    main { padding-top: 60px; }
+
+    section { padding: 4.5rem 1.5rem; }
+    section:nth-child(even) { background: var(--light); }
+
+    .container { max-width: 960px; margin: 0 auto; }
+
+    h2.section-title {
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .section-bar {
+      width: 60px; height: 4px;
+      background: var(--gold);
+      margin-bottom: 2.5rem;
+      border-radius: 2px;
+    }
+    h3 { color: var(--teal); font-size: 1.15rem; margin-bottom: 0.5rem; }
+
+    /* ── STELLEN GRID ─────────────────────────────────────────── */
+    @media (max-width: 720px) { .stellen-grid { grid-template-columns: 1fr !important; } }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    #hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f2540 60%, #0D7EA0 100%);
+      color: var(--white);
+      padding: 6rem 1.5rem 5rem;
+      text-align: center;
+    }
+    #hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    #hero .subtitle {
+      font-size: 1.15rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    #hero .tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.80);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .badge.gold {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+    .cta-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+
+    /* ── PROFILE / INTRO ─────────────────────────────────────── */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 680px) { .profile-grid { grid-template-columns: 1fr; } }
+    .profile-card {
+      background: var(--white);
+      border-top: 4px solid var(--teal);
+      padding: 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .profile-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .profile-card h4 {
+      color: var(--navy);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+    .profile-card p { font-size: 0.92rem; color: #444; }
+
+    /* ── CV / TIMELINE ────────────────────────────────────────── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--teal), var(--navy));
+      border-radius: 2px;
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 1.5rem;
+    }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -2.15rem; top: 0.45rem;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+    .tl-date {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+    .tl-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.1rem;
+    }
+    .tl-org { font-size: 0.92rem; color: var(--teal); font-weight: 600; margin-bottom: 0.4rem; }
+    .tl-body { font-size: 0.9rem; color: #555; }
+    .tl-body strong { color: var(--navy); }
+
+    /* academic timeline */
+    .acad-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 600px) { .acad-grid { grid-template-columns: 1fr; } }
+    .acad-card {
+      border-left: 4px solid var(--gold);
+      padding: 1rem 1.25rem;
+      background: var(--white);
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+    }
+    .acad-card .degree {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+    .acad-card .inst { color: var(--teal); font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .acad-card .years {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .acad-card .note { font-size: 0.85rem; color: #555; font-style: italic; }
+
+    /* ── DISSERTATION ─────────────────────────────────────────── */
+    .diss-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 720px) { .diss-grid { grid-template-columns: 1fr; } }
+    .diss-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .stat-box {
+      background: var(--navy);
+      color: var(--white);
+      padding: 1.25rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .stat-box .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-box .lbl { font-size: 0.8rem; opacity: 0.85; }
+    .proposition-list { margin-top: 1rem; }
+    .proposition-list li {
+      padding: 0.4rem 0;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #e8e8e8;
+      list-style: none;
+    }
+    .proposition-list li::before {
+      content: 'P';
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 0.5rem;
+    }
+    .framework-box {
+      background: linear-gradient(135deg, var(--navy), #0f2540);
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .framework-box .fw-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .framework-box .fw-sub {
+      font-size: 0.8rem;
+      opacity: 0.75;
+      margin-bottom: 1.5rem;
+    }
+    .mstm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .mstm-cell {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.20);
+      padding: 0.75rem;
+      border-radius: 4px;
+    }
+    .mstm-cell .letter {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+    }
+    .mstm-cell .word { font-size: 0.78rem; opacity: 0.85; }
+    .mstm-cell .mstm-detail {
+      font-size: 0.72rem;
+      opacity: 0.70;
+      margin-top: 0.4rem;
+      line-height: 1.5;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 0.4rem;
+    }
+
+    /* ── PHASE MODEL ─────────────────────────────────────────── */
+    .phase-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .phase-item {
+      flex: 1;
+      min-width: 100px;
+      background: var(--navy);
+      color: white;
+      padding: 1rem 0.75rem;
+      text-align: center;
+      position: relative;
+      font-size: 0.8rem;
+    }
+    .phase-item:not(:last-child)::after {
+      content: '▶';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1rem;
+      z-index: 2;
+    }
+    .phase-item .phase-num {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .phase-item .phase-name {
+      display: block;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-bottom: 0.25rem;
+    }
+    .phase-item .phase-desc { font-size: 0.72rem; opacity: 0.75; line-height: 1.4; }
+    .phase-item.phase-end { background: var(--teal); }
+    @media (max-width: 640px) {
+      .phase-flow { flex-direction: column; }
+      .phase-item:not(:last-child)::after { content: '▼'; right: auto; left: 50%; bottom: -12px; top: auto; transform: translateX(-50%); }
+    }
+
+    /* ── TEACHING ─────────────────────────────────────────────── */
+    .teach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .teach-card {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--teal);
+      transition: transform 0.2s;
+    }
+    .teach-card:hover { transform: translateY(-3px); }
+    .teach-card .tc-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .teach-card h4 { color: var(--navy); font-size: 1rem; margin-bottom: 0.5rem; }
+    .teach-card p { font-size: 0.88rem; color: #555; }
+
+    /* ── PUBLICATIONS ─────────────────────────────────────────── */
+    .pub-list { margin-top: 1.5rem; }
+    .pub-item {
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+      background: var(--white);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+    .pub-item.forthcoming { border-left-color: var(--gold); }
+    .pub-item.review { border-left-color: #aaa; }
+    .pub-status {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.15rem 0.6rem;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+    .pub-status.published { background: #e0f4ea; color: #1a7a3e; }
+    .pub-status.forthcoming { background: #fff3dc; color: #8a5a00; }
+    .pub-status.review { background: #f0f0f0; color: #666; }
+    .pub-ref { font-size: 0.9rem; color: #333; line-height: 1.6; }
+    .pub-ref em { font-style: italic; }
+    .pub-note { font-size: 0.8rem; color: var(--teal); margin-top: 0.4rem; }
+
+    /* ── RESEARCH AGENDA ─────────────────────────────────────── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 640px) { .research-grid { grid-template-columns: 1fr; } }
+    .research-card {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .research-card h4 { color: var(--navy); margin-bottom: 0.6rem; font-size: 1rem; }
+    .research-card ul { padding-left: 1.2rem; font-size: 0.88rem; color: #555; }
+    .research-card ul li { margin-bottom: 0.3rem; }
+    .journal-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .j-pill {
+      background: var(--navy);
+      color: white;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* ── MANDATES ─────────────────────────────────────────────── */
+    .mandate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .mandate-card {
+      background: var(--navy);
+      color: var(--white);
+      padding: 1.5rem;
+      border-radius: 6px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .mandate-card .company {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .mandate-card .role { font-size: 0.85rem; opacity: 0.85; margin-bottom: 0.5rem; }
+    .mandate-card .detail { font-size: 0.82rem; opacity: 0.75; }
+
+    /* ── CONTACT ─────────────────────────────────────────────── */
+    #kontakt { background: var(--navy); color: var(--white); }
+    #kontakt h2.section-title { color: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-icon {
+      background: var(--gold);
+      color: var(--navy);
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .contact-item a { color: var(--gold); text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
+    .contact-item p { font-size: 0.9rem; opacity: 0.85; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: #0d1e30;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ── UTILS ───────────────────────────────────────────────── */
+    .text-teal { color: var(--teal); }
+    .text-gold  { color: var(--gold); }
+    .mt1 { margin-top: 1rem; }
+    .mt2 { margin-top: 2rem; }
+
+    blockquote.intro {
+      border-left: 4px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: var(--white);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--navy);
+      border-radius: 0 4px 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-logo">Dr. <span>Christian Neusser</span></div>
+  <div class="hamburger" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="nav-menu" id="navMenu">
+    <a href="#profil"        onclick="closeMenu()">Profil</a>
+    <a href="#stellen"       onclick="closeMenu()">Beide Stellen</a>
+    <a href="#abwl"          onclick="closeMenu()">ABWL / Finanzdienstleistung</a>
+    <a href="#tourismus"     onclick="closeMenu()">Tourismus &amp; Dienstleistung</a>
+    <a href="#lebenslauf"    onclick="closeMenu()">Lebenslauf</a>
+    <a href="#dissertation"  onclick="closeMenu()">Dissertation</a>
+    <a href="#lehre"         onclick="closeMenu()">Lehre &amp; Didaktik</a>
+    <a href="#publikationen" onclick="closeMenu()">Publikationen</a>
+    <a href="#forschung"     onclick="closeMenu()">Forschungsagenda</a>
+    <a href="#mandate"       onclick="closeMenu()">Praxismandate</a>
+    <a href="#kontakt"       onclick="closeMenu()">Kontakt</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-badges">
+      <span class="badge gold">Doppelbewerbung W2 · DHBW Lörrach 2026</span>
+    </div>
+    <h1>Dr. Christian Neusser</h1>
+    <p class="subtitle">DBA · MBA · MSc · Dipl.-Betriebswirt (FH)</p>
+    <p class="tagline">
+      Bewerbung auf zwei W2-Professuren an der Dualen Hochschule Baden-Württemberg Lörrach:<br>
+      <strong>Betriebswirtschaftslehre</strong> (Verfahren 2026-LÖ-W-2) sowie
+      <strong>BWL, insb. Tourismus- und Dienstleistungsmanagement</strong> (Verfahren 2025-LÖ-W-2).<br>
+      Zwei differenzierte Profile aus einer einzigen wissenschaftlich-praktischen Biografie.
+    </p>
+    <div class="hero-badges">
+      <span class="badge">25+ Jahre Praxis · CFO/CRO · DACH &amp; UK</span>
+      <span class="badge">Bankausbildung Sparkasse · Controller I–V · Bilanzbuchhalter IHK</span>
+      <span class="badge">DBA Henley · MSTM-Framework (Neusser, 2026)</span>
+      <span class="badge">ORCID 0000-0001-6484-1421</span>
+    </div>
+    <a href="#stellen" class="cta-btn">Zu den Bewerbungen</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PROFIL
+══════════════════════════════════════════════════ -->
+<section id="profil">
+  <div class="container">
+    <h2 class="section-title">Profil</h2>
+    <div class="section-bar"></div>
+
+    <blockquote class="intro">
+      „Ich bewerbe mich auf zwei W2-Professuren der DHBW Lörrach, weil mein Profil zwei klar unterscheidbare,
+      aber jeweils belastbare Facetten zeigt: betriebswirtschaftliche Kerntiefe in Rechnungswesen, Bilanzierung,
+      Finanzierung und Controlling – flankiert durch eine Sparkassen-Ausbildung als Innenperspektive auf die
+      Finanzdienstleistungsbranche – und über zwei Jahrzehnte Service-Transformations- und Mobilitätspraxis
+      in Konzernen und Familienunternehmen. Diese Webseite trennt die beiden Profile sauber, ohne den
+      gemeinsamen wissenschaftlich-pädagogischen Kern zu verlieren."
+    </blockquote>
+
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="icon">🎓</div>
+        <h4>Akademische Exzellenz</h4>
+        <p>DBA Straight Pass (Henley Business School, University of Reading, Januar 2026); MSc Business Management Research; Executive MBA – alle mit Auszeichnung. Entwickler des MSTM-Frameworks (Neusser, 2026) zu Governance in Transformationsphasen. Habilitation an der Universität Siegen (ab April 2026, 50 %).</p>
+      </div>
+      <div class="profile-card">
+        <div class="icon">💼</div>
+        <h4>25 Jahre Führungspraxis</h4>
+        <p>CRO/CFO/CEO-Mandate u. a. bei Groupe Atlantic (2,8 Mrd. €), Oerlikon (1,5 Mrd. €), DB Regio (8,7 Mrd. €, Reiseverkehr), Küchen Quelle (Familien-Service), FATH Group (Konzern-Controlling). Davor: KPMG Transaction Services, Sparkasse Erlangen (Bankausbildung 1998–2000).</p>
+      </div>
+      <div class="profile-card">
+        <div class="icon">📚</div>
+        <h4>Lehre seit 2004</h4>
+        <p>Lehrbeauftragter an DHBW Stuttgart, DHBW CAS Heilbronn, Henley Business School (EN), IU Internationale Hochschule, FAU Erlangen-Nürnberg, Universität Witten/Herdecke, Universität Siegen. Erfahrung mit dualen, internationalen und digitalen Lehrformaten seit über 20 Jahren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     BEIDE STELLEN
+══════════════════════════════════════════════════ -->
+<section id="stellen">
+  <div class="container">
+    <h2 class="section-title">Beide Stellen im Überblick</h2>
+    <div class="section-bar"></div>
+
+    <p style="margin-bottom:1.5rem;">
+      Die DHBW Lörrach hat parallel zwei W2-Professuren ausgeschrieben, die unterschiedliche Facetten meines Profils ansprechen.
+      Ich bewerbe mich auf beide bewusst differenziert. Diese Webseite stellt beide Bewerbungen nebeneinander, damit Sie schnell
+      sehen, welches Profil zur jeweiligen Stelle passt.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem;" class="stellen-grid">
+
+      <div style="background:var(--white); border-radius:8px; padding:1.75rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); border-top:6px solid var(--navy);">
+        <span class="badge gold" style="display:inline-block; margin-bottom:0.75rem;">A-Stelle · Hauptmatch</span>
+        <h3 style="color:var(--navy); margin-bottom:0.5rem; font-size:1.15rem;">W2-Professur Betriebswirtschaftslehre</h3>
+        <p style="font-size:0.85rem; color:var(--teal); font-weight:600; margin-bottom:0.5rem;">Verfahren 2026-LÖ-W-2  ·  Bewerbungsfrist 14.06.2026</p>
+        <p style="font-size:0.9rem; color:#444; margin-bottom:1rem;">
+          Schwerpunkte: HGB / IFRS-Rechnungslegung, Bilanzierung und Konzernabschluss, Jahresabschlussanalyse,
+          Kosten- und Leistungsrechnung, Finanzierung und Investition, Controlling.
+          Ausrichtung: <strong>Finanzdienstleistungsbranche</strong>.
+        </p>
+        <p style="font-size:0.88rem; color:#333; margin-bottom:1rem;">
+          <strong>Mein Schwerpunkt-Match:</strong> Sparkassen-Bankausbildung (Note 1,9), CFO/CRO-Praxis mit
+          Bankenkommunikation, Konzernabschluss FATH Group (zwölf Jahre HGB), KPMG Tax & Financial Due Diligence,
+          Controller I–V (CA), Bilanzbuchhalter IHK, Rating-Analyst FH.
+        </p>
+        <a href="#abwl" class="cta-btn" style="font-size:0.85rem; padding:0.55rem 1.2rem;">Zur ABWL-Bewerbung</a>
+      </div>
+
+      <div style="background:var(--white); border-radius:8px; padding:1.75rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); border-top:6px solid var(--teal);">
+        <span class="badge" style="display:inline-block; margin-bottom:0.75rem; background:rgba(13,126,160,0.12); color:var(--teal); border:1px solid rgba(13,126,160,0.3);">B-Stelle · Strategisches Profil</span>
+        <h3 style="color:var(--navy); margin-bottom:0.5rem; font-size:1.15rem;">W2-Professur BWL, insb. Tourismus- &amp; Dienstleistungsmanagement</h3>
+        <p style="font-size:0.85rem; color:var(--teal); font-weight:600; margin-bottom:0.5rem;">Verfahren 2025-LÖ-W-2  ·  Bewerbungsfrist 27.05.2026  ·  Start 01.10.2026</p>
+        <p style="font-size:0.9rem; color:#444; margin-bottom:1rem;">
+          Schwerpunkte: Touristische Wertschöpfung, Hotellerie &amp; Gastronomie, Reiseverkehrsmanagement,
+          Destinationsmanagement, Nachhaltigkeit, Digitalisierung im Tourismus, Marketing.
+          Ausrichtung: <strong>Service-Transformation und Plattformökonomie</strong>.
+        </p>
+        <p style="font-size:0.88rem; color:#333; margin-bottom:1rem;">
+          <strong>Mein Schwerpunkt-Match:</strong> CRO DB Regio (Reiseverkehr, 8,7 Mrd. €), CEO Küchen Quelle
+          (digitale Service-Transformation), CRO Groupe Atlantic (internationale Service-Reorganisation, 5 Länder),
+          eigene Nachhaltigkeitsforschung (Neusser, 2025, JFBS), EU4Dual-Anschlussfähigkeit.
+        </p>
+        <a href="#tourismus" class="cta-btn" style="font-size:0.85rem; padding:0.55rem 1.2rem; background:var(--teal);">Zur Tourismus-Bewerbung</a>
+      </div>
+
+    </div>
+
+    <div style="margin-top:2rem; padding:1.5rem; background:rgba(232,160,32,0.08); border-left:4px solid var(--gold); border-radius:0 6px 6px 0;">
+      <h4 style="color:var(--navy); margin-bottom:0.5rem;">Warum eine Doppelbewerbung?</h4>
+      <p style="font-size:0.92rem; color:#444; margin-bottom:0.5rem;">
+        Beide Stellen adressiere ich aus jeweils unterschiedlichen, jeweils belastbaren Profilfacetten:
+        die ABWL-Stelle aus der finanzwirtschaftlichen Kerntiefe; die Tourismus-/Dienstleistungs-Stelle
+        aus der Service-Transformations- und Plattform-Perspektive. Beide Bewerbungen sind eigenständig,
+        differenziert und inhaltlich nicht austauschbar.
+      </p>
+      <p style="font-size:0.92rem; color:#444;">
+        Mein <strong>fachlich am stärksten konsolidiertes Profil</strong> liegt bei der ABWL-Professur.
+        Die Tourismus-/Dienstleistungs-Stelle ist – in der modern formulierten Ausrichtung der Ausschreibung
+        auf Digitalisierung, Internationalisierung und Nachhaltigkeit – ebenfalls glaubwürdig adressierbar.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     ABWL / FINANZDIENSTLEISTUNG
+══════════════════════════════════════════════════ -->
+<section id="abwl">
+  <div class="container">
+    <h2 class="section-title">A-Stelle: ABWL · Finanzdienstleistungsbranche</h2>
+    <div class="section-bar"></div>
+
+    <blockquote class="intro">
+      „Bilanzierung, Rechnungslegung und Finanzierung sind für mich keine Lehrgebiete unter vielen, sondern die methodische Mitte meiner Laufbahn – von der Sparkassen-Bankausbildung über die Diplomarbeit mit Schwerpunkt Rechnungswesen, Controlling und Steuern bis zu 25 Jahren als CFO, CRO und Senior Associate bei KPMG Transaction Services."
+    </blockquote>
+
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="icon">🏦</div>
+        <h4>Bankhintergrund &amp; Finanzdienstleistung</h4>
+        <p>Bankkaufmann (Stadt- und Kreissparkasse Erlangen, 1998–2000, Note 1,9) · 20+ Jahre Bankenkommunikation als CFO/CRO (Re-Kapitalisierung FATH 7 Mio. €, Sanierungsfinanzierungen Riedel/Oerlikon/Groupe Atlantic, Konsortialkredite).</p>
+      </div>
+      <div class="profile-card">
+        <div class="icon">📊</div>
+        <h4>Rechnungslegung &amp; Bilanzierung</h4>
+        <p>Zwölf Jahre HGB-Konzernabschluss als CFO FATH Group (vier Länder); KPMG Financial Due Diligence in M&amp;A-Mandaten bis 1,6 Mrd. €; Bilanzbuchhalter IHK; Vertiefung IFRS 9/15/16/17 in der Lehre.</p>
+      </div>
+      <div class="profile-card">
+        <div class="icon">📈</div>
+        <h4>Controlling &amp; Finanzierung</h4>
+        <p>Controller I–V Controller Akademie; CFO mit Aufbau von Konzern-Controlling-Strukturen; Investitions- und Bewertungspraxis aus M&amp;A und Carve-out-Mandaten (Siemens, Honeywell); Power-BI- und IBM-PA-Implementierungen.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem;">Geplante Lehrgebiete für die DHBW Lörrach</h3>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem;">
+      <div style="background:var(--white); border-left:3px solid var(--navy); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Rechnungslegung HGB &amp; IFRS</strong><br>Einzel- und Konzernabschluss, Bankenbilanzierung, IFRS 9 für Kredite</div>
+      <div style="background:var(--white); border-left:3px solid var(--navy); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Jahresabschlussanalyse</strong><br>Kennzahlen, Rating, Branchenvergleich, Bank-Rating-Werkstatt</div>
+      <div style="background:var(--white); border-left:3px solid var(--navy); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Kosten- &amp; Leistungsrechnung</strong><br>KAR/KSR/KTR, Deckungsbeitrag, Prozesskostenrechnung für Banken</div>
+      <div style="background:var(--white); border-left:3px solid var(--navy); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Finanzierung &amp; Investition</strong><br>WACC, DCF, Unternehmensbewertung, Deal Simulation, Bankenpraxis</div>
+      <div style="background:var(--white); border-left:3px solid var(--navy); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Controlling</strong><br>Strategisch/operativ, RAPM, Banken-/Versicherungs-Controlling, ESG-KPIs</div>
+      <div style="background:var(--white); border-left:3px solid var(--navy); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Steuern (Grundlagen)</strong><br>KSt, GewSt, USt; Bankspezifische Steuerfragen; Vertiefung im Tandem mit StB</div>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem;">Forschungsschwerpunkte ABWL</h3>
+    <div class="research-grid">
+      <div class="research-card">
+        <h4>FSP I · Mittelstandscontrolling &amp; MSTM-Validierung</h4>
+        <ul>
+          <li>PLS-SEM-Validierung des MSTM-Frameworks (Neusser, 2026)</li>
+          <li>Performance-Measurement in KMU-Transformationen</li>
+          <li>KPI-Dashboard für Governance-Monitoring</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>FSP II · Bilanzierung in Sparkassen &amp; Volksbanken</h4>
+        <ul>
+          <li>IFRS 9 ECL-Modelle in der Sparkassen-Finanzgruppe</li>
+          <li>Rating- und Kreditprozesse im Mittelstand</li>
+          <li>CSRD-Umsetzung im Firmenkundengeschäft</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>FSP III · ESG-Controlling &amp; CSRD im Mittelstand</h4>
+        <ul>
+          <li>Doppelte Wesentlichkeit für KMU</li>
+          <li>Integration ESG-KPIs in das interne Reporting</li>
+          <li>ESG-Risiken in der Kreditvergabe (Hausbank/Mittelstand)</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>Drittmittel-Pipeline</h4>
+        <ul>
+          <li>DFG-Sachbeihilfe (150–200 T€)</li>
+          <li>ZIM-Kooperation BMWK (175–250 T€)</li>
+          <li>DSGV / BWGV Wissenschaftsförderung</li>
+          <li>EU Horizon Europe (Cluster 6)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem; padding:1.25rem; background:rgba(26,58,92,0.06); border-radius:6px;">
+      <h4 style="color:var(--navy); margin-bottom:0.5rem;">Bewerbungsunterlagen ABWL</h4>
+      <p style="font-size:0.9rem;">Anschreiben · Lebenslauf · Lehrkonzept · Forschungskonzept – jeweils spezifisch auf die ABWL-Professur (Verfahren 2026-LÖ-W-2) zugeschnitten. Die vollständigen Dokumente werden zusammen mit der formalen Online-Bewerbung über das DHBW-Portal eingereicht.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     TOURISMUS &amp; DIENSTLEISTUNG
+══════════════════════════════════════════════════ -->
+<section id="tourismus">
+  <div class="container">
+    <h2 class="section-title">B-Stelle: Tourismus- &amp; Dienstleistungsmanagement</h2>
+    <div class="section-bar"></div>
+
+    <blockquote class="intro">
+      „Ich bewerbe mich auf diese Professur nicht als klassischer Tourismus-Spezialist, sondern als wissenschaftlich promovierter Service-Transformations-Manager mit ausgewiesener Praxiserfahrung in Reiseverkehr (DB Regio), digitaler Direktvertriebs-Service-Transformation (Küchen Quelle) und internationaler Service-Reorganisation (Groupe Atlantic, fünf Länder)."
+    </blockquote>
+
+    <div class="profile-grid">
+      <div class="profile-card" style="border-top-color:var(--teal); border-top-width:4px; border-top-style:solid;">
+        <div class="icon">🚆</div>
+        <h4>Reiseverkehr &amp; Mobilität</h4>
+        <p>CRO Deutsche Bahn Regio AG (2017–2020): Target Operating Model, Project Governance und Restrukturierung der größten europäischen Schienen-Service-Organisation (8,7 Mrd. €).</p>
+      </div>
+      <div class="profile-card" style="border-top-color:var(--teal); border-top-width:4px; border-top-style:solid;">
+        <div class="icon">🛎️</div>
+        <h4>Service-Transformation</h4>
+        <p>CEO Küchen Quelle (2020–22): vollständige digitale Service-Transformation eines Familien-Direktvertriebs · CRO Groupe Atlantic (2024–25): internationale Service-Reorganisation in fünf Ländern, 13.000 MA.</p>
+      </div>
+      <div class="profile-card" style="border-top-color:var(--teal); border-top-width:4px; border-top-style:solid;">
+        <div class="icon">🌱</div>
+        <h4>Nachhaltigkeit &amp; Forschung</h4>
+        <p>Open-Access-Publikation zu ökologischer Resilienz in Familienunternehmen (Neusser, 2025, Journal of Family Business Strategy) · Forthcoming-Beitrag im Elgar Companion to Family Business and the UN SDGs.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem;">Geplante Lehrgebiete für die DHBW Lörrach</h3>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem;">
+      <div style="background:var(--white); border-left:3px solid var(--teal); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Touristische Wertschöpfung</strong><br>Akteursysteme, Customer Journey, integratives Tourismusmanagement</div>
+      <div style="background:var(--white); border-left:3px solid var(--teal); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Hotellerie &amp; Gastronomie</strong><br>Operatives Service-Management, Revenue, Familienunternehmen-Cases</div>
+      <div style="background:var(--white); border-left:3px solid var(--teal); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Reiseverkehrsmanagement</strong><br>Schiene, Bus, Luft, intermodale Customer Journeys (DB Regio-Praxis)</div>
+      <div style="background:var(--white); border-left:3px solid var(--teal); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Destinationsmanagement</strong><br>DMO-Governance, Markenführung, Destination Lab Dreiländereck</div>
+      <div style="background:var(--white); border-left:3px solid var(--teal); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Nachhaltigkeitsmanagement</strong><br>CSRD/ESRS, Klimaadaption, ökologische Resilienz (eigene Forschung)</div>
+      <div style="background:var(--white); border-left:3px solid var(--teal); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Digitalisierung im Tourismus</strong><br>Customer Journey Digital, Plattformökonomie, Process Mining, KI</div>
+      <div style="background:var(--white); border-left:3px solid var(--teal); padding:0.85rem 1rem; border-radius:0 4px 4px 0; box-shadow:0 1px 4px rgba(0,0,0,0.04); font-size:0.88rem;"><strong>Marketingmanagement</strong><br>Quantitativ &amp; qualitativ, Service-Branding, Customer Lifetime Value</div>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem;">Forschungsschwerpunkte Tourismus &amp; Service</h3>
+    <div class="research-grid">
+      <div class="research-card">
+        <h4>FSP I · Service-Transformation &amp; Customer Journey</h4>
+        <ul>
+          <li>Service-Transformations-Reifegradmodell für mittelständische Tourismus-/Service-Unternehmen</li>
+          <li>Process Mining im Hotel-/Gastro-Backoffice</li>
+          <li>Customer-Journey-Digitalisierung Hochrhein/Oberrhein</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>FSP II · Plattformökonomie &amp; Mobilitätsservices</h4>
+        <ul>
+          <li>Plattform-Resilienz für mittelständische Service-Anbieter</li>
+          <li>Intermodale Customer Journey im Dreiländereck</li>
+          <li>Geschäftsmodellinnovation in der Reisebranche</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>FSP III · Nachhaltigkeit im Tourismus</h4>
+        <ul>
+          <li>CSRD-Light-Framework für mittelständische Tourismus-/Gastronomiebetriebe</li>
+          <li>Klimaadaption im Schwarzwald-Tourismus</li>
+          <li>Soziale Nachhaltigkeit &amp; Fachkräftesicherung in Hotellerie</li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>Drittmittel-Pipeline</h4>
+        <ul>
+          <li>EU Horizon Europe Cluster 4 &amp; 5</li>
+          <li>Interreg Oberrhein (grenzüberschreitend)</li>
+          <li>BMBF / BMDV / BMWK ZIM</li>
+          <li>EU4Dual-Verbundforschung (Mulhouse, KEDGE)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem; padding:1.25rem; background:rgba(13,126,160,0.06); border-radius:6px;">
+      <h4 style="color:var(--navy); margin-bottom:0.5rem;">Bewerbungsunterlagen Tourismus &amp; Dienstleistung</h4>
+      <p style="font-size:0.9rem;">Anschreiben · Lebenslauf · Lehrkonzept · Forschungskonzept – jeweils spezifisch auf die Tourismus-/Dienstleistungs-Professur (Verfahren 2025-LÖ-W-2) zugeschnitten. Die vollständigen Dokumente werden zusammen mit der formalen Online-Bewerbung über das DHBW-Portal eingereicht.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     LEBENSLAUF
+══════════════════════════════════════════════════ -->
+<section id="lebenslauf">
+  <div class="container">
+    <h2 class="section-title">Lebenslauf</h2>
+    <div class="section-bar"></div>
+
+    <!-- Akademische Zeitleiste -->
+    <h3 style="margin-bottom:1rem;">Akademische Qualifikationen</h3>
+    <div class="acad-grid">
+      <div class="acad-card">
+        <span class="years">04/2021 – 01/2026</span>
+        <div class="degree">Doctor of Business Administration (DBA) · Straight Pass</div>
+        <div class="inst">Henley Business School, University of Reading, Großbritannien</div>
+        <p class="note">Titel: <em>Navigating External Succession in German Mittelstand Family-Owned Manufacturing Companies</em> · MSTM-Framework (Neusser, 2026)</p>
+      </div>
+      <div class="acad-card">
+        <span class="years">10/2018 – 04/2021</span>
+        <div class="degree">MSc of Business Management Research</div>
+        <div class="inst">Henley Business School, University of Reading, Großbritannien</div>
+        <p class="note">Masterarbeit: <em>Family business succession from ownership to corporatisation – A Research Proposal</em> · Gesamtnote: Merit</p>
+      </div>
+      <div class="acad-card">
+        <span class="years">04/2014 – 09/2017</span>
+        <div class="degree">Executive MBA</div>
+        <div class="inst">Henley Business School, University of Reading, Großbritannien</div>
+        <p class="note">Leadership and General Management · <em>Critical Success Factors in the transition of German family-owned manufacturing SME companies to external management</em> · Merit</p>
+      </div>
+      <div class="acad-card">
+        <span class="years">10/2001 – 06/2005</span>
+        <div class="degree">Diplom-Betriebswirt (FH)</div>
+        <div class="inst">Georg-Simon-Ohm Fachhochschule, Nürnberg</div>
+        <p class="note">Schwerpunkte: Rechnungswesen, Controlling, Finanzen und Steuern · Note: 2,5</p>
+      </div>
+    </div>
+
+    <!-- Schlüsselkompetenzen -->
+    <h3 style="margin-top:3rem; margin-bottom:1rem;">Schlüsselkompetenzen</h3>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem; margin-bottom:1rem;">
+
+      <div style="background:var(--white); border-radius:6px; padding:1.25rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:3px solid var(--navy);">
+        <div style="font-weight:700; color:var(--navy); font-size:0.9rem; margin-bottom:0.75rem;">💰 Controlling &amp; Management Accounting</div>
+        <div style="font-size:0.82rem; color:#555; line-height:1.6;">
+          KLR · Budgetierung · Abweichungsanalyse · Kennzahlensysteme (BSC, DuPont) ·
+          Power BI · IBM Planning Analytics · Controller I–V (CA)
+        </div>
+      </div>
+
+      <div style="background:var(--white); border-radius:6px; padding:1.25rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:3px solid var(--teal);">
+        <div style="font-weight:700; color:var(--teal); font-size:0.9rem; margin-bottom:0.75rem;">🌱 Nachhaltigkeits- / ESG-Controlling</div>
+        <div style="font-size:0.82rem; color:#555; line-height:1.6;">
+          CSRD · Doppelte Wesentlichkeit · Scope 1/2/3 · Klima-KPI-Cockpits ·
+          Integration in ERP/BI · LkSG-Anbindung
+        </div>
+      </div>
+
+      <div style="background:var(--white); border-radius:6px; padding:1.25rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:3px solid var(--gold);">
+        <div style="font-weight:700; color:#b07800; font-size:0.9rem; margin-bottom:0.75rem;">📊 Rechnungswesen &amp; Jahresabschluss</div>
+        <div style="font-size:0.82rem; color:#555; line-height:1.6;">
+          HGB-Abschluss · IFRS-Grundzüge · Bilanzanalyse · Ratingmethodik ·
+          Bilanzbuchhalter IHK · Rating-Analyst FH · Financial Due Diligence
+        </div>
+      </div>
+
+      <div style="background:var(--white); border-radius:6px; padding:1.25rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:3px solid #6c757d;">
+        <div style="font-weight:700; color:#444; font-size:0.9rem; margin-bottom:0.75rem;">🎓 Forschung &amp; Lehre</div>
+        <div style="font-size:0.82rem; color:#555; line-height:1.6;">
+          Gioia-Methode · PLS-SEM · Qualitative &amp; quantitative Fallstudien ·
+          Lehrbeauftragter seit 2004 · Englischsprachige Lehre (Henley, IU)
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Berufliche Stationen -->
+    <h3 style="margin-top:3rem; margin-bottom:1.5rem;">Berufserfahrung – 10 Karrierestationen</h3>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-date">11/2024 – 08/2025</div>
+        <div class="tl-title">Chief Restructuring Officer (CRO)</div>
+        <div class="tl-org">Groupe Atlantic S.A., Paris · Mischkonzern · Ums. ca. 2.800 Mio. €</div>
+        <div class="tl-body">
+          Restrukturierung von fünf Werken in Deutschland, Österreich, Frankreich, Polen und Rumänien.
+          Neuausrichtung der Gesamtgruppe für Kalt- und Wärmespeicher. Aufbau eines konzernweiten PMO.
+          <strong>Budget: 100 Mio. €, 1.500 Mitarbeitende.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">01/2024 – 12/2024</div>
+        <div class="tl-title">Chief Restructuring Officer (CRO)</div>
+        <div class="tl-org">Oerlikon AG, Pfäffikon · Mischkonzern · Ums. ca. 1.500 Mio. €</div>
+        <div class="tl-body">
+          Reorganisation und Strategiedefinition. Projektsetup und -begleitung der Schließung aller fünf Produktionsstandorte in Deutschland. Verhandlung mit Banken, Gesellschaftern, Betriebsrat und Gläubigern.
+          <strong>Aufbau PMO; Plandurchführung wie geplant.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">08/2022 – 07/2023</div>
+        <div class="tl-title">Transformationsmanager / Projektleiter</div>
+        <div class="tl-org">Stiftungsfamilie BSW &amp; EWH (Deutsche Bahn), Frankfurt · NGO · ca. 500 MA</div>
+        <div class="tl-body">
+          Projektleitung Transformation Stiftungswesen. Entwicklung neuer Strategie und Umsetzungsplanung. Aufbau des PMO. Begleitung des Vorstands.
+          <strong>Strategie mit Aufsichtsrat abgestimmt, PMO aufgebaut.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">10/2020 – 06/2022</div>
+        <div class="tl-title">Geschäftsführer / Managing Director (MD)</div>
+        <div class="tl-org">Küchen Quelle GmbH / Islands Labs GmbH / Home Furniture Group GmbH, Nürnberg &amp; Berlin</div>
+        <div class="tl-body">
+          Verantwortung für Transformation, Teilverkauf und Neuordnung der Gesellschafterstruktur.
+          Aufsetzen eines Sparprogramms mit insgesamt 46 Mio. € Einsparung. Einführung Power-BI-Reporting und automatisiertem Rechnungsworkflow.
+          <strong>Budget: 70 Mio. €, 34 Mitarbeitende.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">04/2018 – 04/2020</div>
+        <div class="tl-title">Projektleiter Konzernstrategie Bus / Sanierungsmanager (CRO)</div>
+        <div class="tl-org">DB Regio AG, Frankfurt · Öffentlicher Personennahverkehr · Ums. ca. 8.734 Mio. €</div>
+        <div class="tl-body">
+          Entwicklung Target Operating Model und Standardprozessmodell. Aufbau Projektmanagementoffice und Project Governance für den DB-Regio-Bus-Konzernverbund. Stakeholdermanagement zwischen Konzernvorstand und Bereichsvorständen.
+          <strong>Definiertes Target Operating Model und abgestimmtes Prozesshaus.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">01/2018 – 12/2025</div>
+        <div class="tl-title">Associate Partner</div>
+        <div class="tl-org">4C GROUP AG Management Beratung, München · Ums. ca. 16 Mio. €</div>
+        <div class="tl-body">
+          Schwerpunkt eigentümergeführte Unternehmen: Eigentümer- und Unternehmensstruktur, Wachstum und Sanierung.
+          Branchenfokus: Banken &amp; Versicherungen, Maschinenbau, Öffentlicher Verkehr, Prozessindustrie.
+          <strong>Jahresumsatz Akquise: ca. 3 Mio. €.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">01/2017 – 08/2017</div>
+        <div class="tl-title">Geschäftsführer CFO / CEO</div>
+        <div class="tl-org">Riedel Glas, Weiden/Kufstein · Familienunternehmen · Ums. ca. 350 Mio. €</div>
+        <div class="tl-body">
+          Verantwortung für Buchhaltung, Finanzen, Personal, Einkauf, Supply Chain und IT.
+          Gesamtverantwortung für die Restrukturierung der Nachtmann Gruppe. Begleitung Generationenwechsel.
+          <strong>Budget: 80 Mio. €, 120 Mitarbeitende.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">05/2005 – 12/2016</div>
+        <div class="tl-title">Kaufmännischer Geschäftsführer (CFO) &amp; Managing Director</div>
+        <div class="tl-org">FATH Group, Spalt / Orlando / Budapest / Shanghai · Int. Maschinenbau · Ums. ca. 60 Mio. €</div>
+        <div class="tl-body">
+          Aufbau Konzernstrukturen, Controlling, Supply-Chain-Management, Working-Capital-Management.
+          Verlagerung und Ausbau Shared-Service-Center nach Ungarn. Lean Management in Administration und Produktion.
+          <strong>Budget: 20 Mio. €, 45 Mitarbeitende; Abwendung drohender Insolvenz.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">10/2012 – 09/2013</div>
+        <div class="tl-title">Carve-out Manager</div>
+        <div class="tl-org">Siemens AG, München · Konglomerat · Ums. ca. 83.000 Mio. €</div>
+        <div class="tl-body">
+          Etablierung und Aufbau des PMO. Projektleitung Carve-out. Definition und Abstimmung der Carve-out-Regeln sowie Meilensteinplanung.
+          <strong>Budget: 3 Mio. €; erfolgreicher Abschluss im Zeit- und Budgetrahmen.</strong>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">05/2002 – 04/2004</div>
+        <div class="tl-title">Senior Associate – Transaction Services</div>
+        <div class="tl-org">KPMG AG, Frankfurt · Ums. ca. 1,6 Mrd. €</div>
+        <div class="tl-body">
+          Reorganisation eines Produktionsunternehmens; Restrukturierung eines Großhändlers; Bewertung eines kanadischen Holzherstellers; Projektsteuerung Übernahme Landesbank Rheinland-Pfalz durch LBBW.
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+
+    <!-- Lehrtätigkeit -->
+    <h3 style="margin-top:3rem; margin-bottom:1rem;">Lehr- und Trainertätigkeit (seit 2004)</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">seit 10/2004</div>
+        <div class="tl-title">Lehrbeauftragter</div>
+        <div class="tl-org">Duale Hochschule Baden-Württemberg (DHBW), Stuttgart</div>
+        <div class="tl-body">Rechnungslegung, Kostenrechnung, Controlling, Unternehmensführung, Verhandlungsführung (Wirtschaftsingenieurwesen) · Abschluss: Bachelor</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">seit 04/2019</div>
+        <div class="tl-title">Lehrbeauftragter</div>
+        <div class="tl-org">DHBW Center for Advanced Studies (CAS), Heilbronn</div>
+        <div class="tl-body">Wertorientierte Unternehmensführung (Technik) · Abschluss: Master</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">10/2005 – 09/2021</div>
+        <div class="tl-title">Dozent</div>
+        <div class="tl-org">Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)</div>
+        <div class="tl-body">Projektmanagement, Businessplanerstellung, Finanzplanung, Industrielles Management · Bachelor und Master</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">seit 06/2010</div>
+        <div class="tl-title">Projektmanagement-Trainer und -Coach</div>
+        <div class="tl-org">Ottmann &amp; Partner GmbH, Nürnberg</div>
+        <div class="tl-body">Zertifizierungsvorbereitung nach GPM/IPMA, PMI und IAPM. Über 100 Seminare, 1.000+ Teilnehmer. Referenzen: Siemens AG, Lanxess AG, 1&amp;1 Versatel, Robert Bosch AG, Deutsche Bank.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     DISSERTATION
+══════════════════════════════════════════════════ -->
+<section id="dissertation">
+  <div class="container">
+    <h2 class="section-title">Dissertation &amp; MSTM-Framework</h2>
+    <div class="section-bar"></div>
+
+    <p style="margin-bottom:1.5rem; font-size:0.95rem;">
+      <strong>Neusser, C. (2026).</strong> <em>Navigating External Succession in German Mittelstand Family-Owned Manufacturing Companies.</em>
+      Doctoral dissertation (DBA), Henley Business School, University of Reading. <strong>Straight Pass.</strong>
+    </p>
+
+    <div class="diss-grid">
+      <div>
+        <h3>Forschungsdesign &amp; Methode</h3>
+        <p style="font-size:0.92rem; margin:0.75rem 0;">
+          Die Arbeit untersucht, wie produzierende Familienunternehmen den Übergang vom
+          Eigentümermanagement zur professionalisierten Fremdgeschäftsführung gestalten –
+          mit besonderem Fokus auf Governance, Narrativ und Legacy als interdependente Steuerungsebenen.
+          Methodisch basiert die Studie auf der <strong>Gioia-Methode</strong> (Gioia et al., 2013) –
+          einem etablierten Ansatz der qualitativen Organisationsforschung –, der induktiv
+          First-Order-Konzepte aus den Rohdaten herausarbeitet, zu Second-Order-Themen verdichtet
+          und in aggregierte theoretische Dimensionen überführt. Empirische Basis:
+          <strong>42 Familienunternehmen</strong>, <strong>102 Interviews</strong>,
+          davon 8 fokale Längsschnitt-Fallstudien und 34 Validierungsfälle.
+        </p>
+        <p style="font-size:0.92rem; margin:0.75rem 0;">
+          Zentrale Erkenntnis ist das originäre <strong>MSTM-Framework</strong>
+          (Mechanisms–Structure–Trust–Mandate), das die vier interdependenten Dimensionen des
+          Nachfolgesystems beschreibt und als handlungsleitender Rahmen für Praktikerinnen und
+          Praktiker konzipiert ist.
+        </p>
+
+        <h3 style="margin-top:1.5rem;">Der 5-Phasen-Prozess externer Nachfolge</h3>
+        <div class="phase-flow">
+          <div class="phase-item">
+            <span class="phase-num">Phase 1</span>
+            <span class="phase-name">Trigger</span>
+            <span class="phase-desc">Auslöser­ereignis · Familien­interne Krise · Strategischer Impuls</span>
+          </div>
+          <div class="phase-item">
+            <span class="phase-num">Phase 2</span>
+            <span class="phase-name">Selection</span>
+            <span class="phase-desc">Suche, Auswahl &amp; Vertrags­gestaltung · Mandate-Setting</span>
+          </div>
+          <div class="phase-item">
+            <span class="phase-num">Phase 3</span>
+            <span class="phase-name">Onboarding</span>
+            <span class="phase-desc">Einarbeitung · Trust-Building · Rollen­klärung</span>
+          </div>
+          <div class="phase-item">
+            <span class="phase-num">Phase 4</span>
+            <span class="phase-name">Legitimisation</span>
+            <span class="phase-desc">Symbolische &amp; institutionelle Legitimations­prozesse</span>
+          </div>
+          <div class="phase-item phase-end">
+            <span class="phase-num">Phase 5</span>
+            <span class="phase-name">Renewal / Exit</span>
+            <span class="phase-desc">Mandat­erneuerung oder geordneter Abgang</span>
+          </div>
+        </div>
+
+        <h3 style="margin-top:1.5rem;">6 Forschungspropositionen</h3>
+        <ul class="proposition-list">
+          <li>Governance-Mechanismen bedingen den Erfolg externer Nachfolge</li>
+          <li>Strukturelle Klarheit erhöht die Transitionsstabilität</li>
+          <li>Vertrauen (Trust) ist notwendige Bedingung für Mandatsübergabe</li>
+          <li>Mandatsklarheit reduziert Rollenkonflikte und Dysfunktionen</li>
+          <li>Archetypen extern berufener Manager moderieren den Prozess</li>
+          <li>Dynamische Fähigkeiten bestimmen die Post-Transition-Performance</li>
+        </ul>
+
+        <h3 style="margin-top:1.5rem;">16 Akteursarchetypen</h3>
+        <p style="font-size:0.88rem; color:#555; margin-bottom:0.75rem;">
+          Die Analyse identifiziert sechzehn distinkte Archetypen in vier Akteursgruppen – und liefert damit eine differenzierte Handlungsgrundlage für Beratung, Governance-Design und empirische Folgestudien.
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; font-size:0.82rem;">
+          <div style="background:#f0f4f8; padding:0.6rem 0.75rem; border-radius:5px; border-left:3px solid var(--navy);">
+            <strong style="color:var(--navy); display:block; margin-bottom:0.25rem;">Vorgänger</strong>
+            Architect · Ghost · Gatekeeper · Refugee
+          </div>
+          <div style="background:#f0f4f8; padding:0.6rem 0.75rem; border-radius:5px; border-left:3px solid var(--teal);">
+            <strong style="color:var(--teal); display:block; margin-bottom:0.25rem;">Familieneigentümer</strong>
+            Anchor · Phantom Owner · Internal Competitor · Narrator
+          </div>
+          <div style="background:#f0f4f8; padding:0.6rem 0.75rem; border-radius:5px; border-left:3px solid var(--gold);">
+            <strong style="color:#b07800; display:block; margin-bottom:0.25rem;">Nachfolger</strong>
+            Integrator · Challenger · Guardian · Misfit
+          </div>
+          <div style="background:#f0f4f8; padding:0.6rem 0.75rem; border-radius:5px; border-left:3px solid #6c757d;">
+            <strong style="color:#444; display:block; margin-bottom:0.25rem;">Berater</strong>
+            Process Architect · Mediator · Executor · Symbolic Endorser
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="framework-box">
+          <div class="fw-title">MSTM</div>
+          <div class="fw-sub">Neusser (2026) – Mechanisms · Structure · Trust · Mandate</div>
+          <div class="mstm-grid">
+            <div class="mstm-cell">
+              <span class="letter">M</span>
+              <span class="word">Mechanisms<br><small>Formale Governance-Prozesse</small></span>
+              <div class="mstm-detail">Suchverfahren für externe Nachfolger · Vertrags­gestaltung · Vergütungs­strukturen · Berichts­wege</div>
+            </div>
+            <div class="mstm-cell">
+              <span class="letter">S</span>
+              <span class="word">Structure<br><small>Institutionelle Rahmung</small></span>
+              <div class="mstm-detail">Beiräte &amp; Aufsichtsräte · Familien­rat · Gesellschafter­ausschuss · Rollen­abgrenzung Eigentümer/Management</div>
+            </div>
+            <div class="mstm-cell">
+              <span class="letter">T</span>
+              <span class="word">Trust<br><small>Vertrauen &amp; Legitimität</small></span>
+              <div class="mstm-detail">Kompetenz­basiertes Vertrauen · Beziehungs­basiertes Vertrauen · Symbolische Legitimations­akte · Reputations­transfer</div>
+            </div>
+            <div class="mstm-cell">
+              <span class="letter">M</span>
+              <span class="word">Mandate<br><small>Ermächtigung &amp; Autorität</small></span>
+              <div class="mstm-detail">Formale Entscheidungs­befugnisse · Symbolische Autorität · Mandat­klarheit · Scope of Authority</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diss-stats" style="margin-top:1.5rem; grid-template-columns: 1fr 1fr;">
+          <div class="stat-box">
+            <span class="num">102</span>
+            <span class="lbl">Interviews geführt</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">42</span>
+            <span class="lbl">Unternehmen untersucht</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">8</span>
+            <span class="lbl">Fokale Fallstudien</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">34</span>
+            <span class="lbl">Validierungsfälle</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">6</span>
+            <span class="lbl">Forschungspropositionen</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">16</span>
+            <span class="lbl">Akteursarchetypen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Vier Nachfolge-Cluster ──────────────────────────────── -->
+    <h3 style="margin-top:3rem; margin-bottom:0.5rem; color:var(--navy);">Die vier Nachfolge-Cluster</h3>
+    <p style="font-size:0.9rem; color:#555; margin-bottom:1.5rem;">
+      Die Forschungsergebnisse verdichten sich zu vier typologischen Clustern, die externe Nachfolgeverläufe erklären.
+      Die Outcomes werden durch <strong>Konfigurationen von Governance und Narrativ geformt – nicht durch individuelle Kompetenz allein</strong> (Neusser, 2026).
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.25rem;">
+
+      <div style="background:var(--navy); color:white; border-radius:8px; padding:1.5rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-10px; right:-10px; font-size:4rem; opacity:0.08;">🛡</div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;">Cluster 1</div>
+        <h4 style="font-size:1.05rem; margin-bottom:0.75rem; color:white;">Legacy Stewards</h4>
+        <p style="font-size:0.82rem; opacity:0.9; line-height:1.6;">
+          <strong style="color:var(--gold);">Governance:</strong> Formalisiert<br>
+          <strong style="color:var(--gold);">Narrativ:</strong> Kontinuitätsorientiert<br>
+          <strong style="color:var(--gold);">Rolle:</strong> Hüter des artikulierten Erbes
+        </p>
+      </div>
+
+      <div style="background:var(--teal); color:white; border-radius:8px; padding:1.5rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-10px; right:-10px; font-size:4rem; opacity:0.08;">🚀</div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; color:#d4f5e0; text-transform:uppercase; margin-bottom:0.5rem;">Cluster 2</div>
+        <h4 style="font-size:1.05rem; margin-bottom:0.75rem; color:white;">Strategic Revitalisers</h4>
+        <p style="font-size:0.82rem; opacity:0.9; line-height:1.6;">
+          <strong style="color:#d4f5e0;">Governance:</strong> Stark<br>
+          <strong style="color:#d4f5e0;">Narrativ:</strong> Adaptiv<br>
+          <strong style="color:#d4f5e0;">Rolle:</strong> Breites Mandat für Wandel &amp; Innovation
+        </p>
+      </div>
+
+      <div style="background:#2C3E50; color:white; border-radius:8px; padding:1.5rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-10px; right:-10px; font-size:4rem; opacity:0.08;">⚡</div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; color:#f4a261; text-transform:uppercase; margin-bottom:0.5rem;">Cluster 3</div>
+        <h4 style="font-size:1.05rem; margin-bottom:0.75rem; color:white;">Crisis Intervenors</h4>
+        <p style="font-size:0.82rem; opacity:0.9; line-height:1.6;">
+          <strong style="color:#f4a261;">Governance:</strong> Schwach, fragmentiert<br>
+          <strong style="color:#f4a261;">Narrativ:</strong> Akute Notlage<br>
+          <strong style="color:#f4a261;">Rolle:</strong> Konditioniertes, enges Mandat; fragile Legitimität
+        </p>
+      </div>
+
+      <div style="background:var(--gold); color:white; border-radius:8px; padding:1.5rem; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-10px; right:-10px; font-size:4rem; opacity:0.08;">🧭</div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.1em; color:var(--navy); text-transform:uppercase; margin-bottom:0.5rem;">Cluster 4</div>
+        <h4 style="font-size:1.05rem; margin-bottom:0.75rem; color:var(--navy);">Hybrid Navigators</h4>
+        <p style="font-size:0.82rem; line-height:1.6; color:var(--navy);">
+          <strong>Governance:</strong> Gemischt<br>
+          <strong>Narrativ:</strong> Umkämpft<br>
+          <strong>Rolle:</strong> Nicht-lineare Verläufe, andauernde Doppelmacht &amp; Spannung
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     LEHRE & DIDAKTIK
+══════════════════════════════════════════════════ -->
+<section id="lehre">
+  <div class="container">
+    <h2 class="section-title">Lehre &amp; Didaktik</h2>
+    <div class="section-bar"></div>
+
+    <p style="margin-bottom:1rem;">
+      Seit 2004 lehre ich kontinuierlich an Hochschulen – darunter über zwanzig Jahre an der
+      <strong>DHBW Stuttgart</strong> (Wirtschaftsingenieurwesen, Bachelor) und seit 2019 an der
+      <strong>DHBW CAS Heilbronn</strong> (Corporate Leadership, Master). Das duale Studienmodell und seinen
+      Wechsel zwischen Theorie- und Praxisphasen kenne ich seit zwei Jahrzehnten aus der Innenperspektive.
+      Meine Lehrphilosophie verbindet konstruktivistische Lerntheorie (Vygotsky, 1978; Jonassen, 1991) mit
+      erfahrungsbasiertem Lernen (Kolb, 1984) und realer CFO-/CEO-/CRO-Praxis.
+    </p>
+
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="tc-icon">📚</div>
+        <h4>21 Jahre DHBW-Erfahrung</h4>
+        <p>Lehre an der DHBW Stuttgart (Bachelor Wirtschaftsingenieurwesen) seit 2004; an der DHBW CAS Heilbronn (Master Technik-Management/Corporate Leadership) seit 2019. Vertraut mit Studiengangsstruktur, Theorie-Praxis-Phasen und Dualer-Partner-Logik.</p>
+      </div>
+      <div class="teach-card">
+        <div class="tc-icon">🎯</div>
+        <h4>Case-First-Methode</h4>
+        <p>Jede Lehreinheit beginnt mit einem realen Fall aus 25 Jahren Führungspraxis: FATH-Konzernabschluss, Riedel-Restrukturierung, DB-Regio-TOM, Küchen-Quelle-Digital-Transformation, Groupe-Atlantic-Service-Reorganisation. Theorie erschließt sich durch die Fallanalyse.</p>
+      </div>
+      <div class="teach-card">
+        <div class="tc-icon">🌐</div>
+        <h4>Englisch &amp; International</h4>
+        <p>DBA, MSc und MBA in englischer Sprache an der Henley Business School (UK). Seit 2023 dort als Associate in Corporate Finance, Leadership &amp; Change, Succession Studies (EN, C1/C2). Französisch-Grundkenntnisse für das Dreiländereck.</p>
+      </div>
+      <div class="teach-card">
+        <div class="tc-icon">🤖</div>
+        <h4>Digitale Lehrformate</h4>
+        <p>Power BI, Process Mining (Celonis, PM4Py), KI im Reporting – aus eigener CFO-/CRO-Praxis. Online-Lehre an der IU Internationalen Hochschule seit 2026 und Blended-Learning an der Henley Business School seit 2023.</p>
+      </div>
+      <div class="teach-card">
+        <div class="tc-icon">📊</div>
+        <h4>TOPSIM-Planspiel seit 20 Jahren</h4>
+        <p>Erfahrungsbasiertes Lernformat in der Unternehmensführung an der DHBW Stuttgart, das die Interdependenz von Rechnungswesen, Controlling, Finanzierung und Strategie unmittelbar erfahrbar macht.</p>
+      </div>
+      <div class="teach-card">
+        <div class="tc-icon">🎓</div>
+        <h4>Didaktische Weiterbildung 2025/26</h4>
+        <p>„Design Thinking in der Hochschullehre" (03/2026); „Transformatives Lernen in der Hochschullehre" (11/2025); „Duale Hochschullehre kompakt" am ZHL der DHBW (Grundlagen + Vertiefung).</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem;">Lehrformate für die DHBW Lörrach</h3>
+    <p style="font-size:0.92rem; margin-bottom:1rem;">
+      Beide Bewerbungen nutzen erprobte Lehrformate, die ich in den Lehrkonzept-PDFs ausführlich beschreibe:
+      <strong>CFO-/CEO-Fallstudien-Bibliothek</strong> (Harvard-Format),
+      <strong>Reallabor-Projekte mit Dualen Partnern</strong>,
+      <strong>Excel-/Power-BI-Modelling-Workshops</strong>,
+      <strong>Bank-Rating-Werkstatt</strong> bzw. <strong>Service Design Thinking Sprints</strong>,
+      <strong>Deal Simulation</strong> bzw. <strong>Digital Service Lab</strong>,
+      und <strong>internationale EU4Dual-Lehrkooperationen</strong> mit Universität Mulhouse, KEDGE Business School und Henley Business School.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PUBLIKATIONEN
+══════════════════════════════════════════════════ -->
+<section id="publikationen">
+  <div class="container">
+    <h2 class="section-title">Publikationen</h2>
+    <div class="section-bar"></div>
+    <p style="font-size:0.88rem; color:#666; margin-bottom:1.5rem;">Alle Angaben in APA 7. ORCID: <a href="https://orcid.org/0000-0001-6484-1421" target="_blank" style="color:var(--teal);">0000-0001-6484-1421</a></p>
+
+    <div class="pub-list">
+
+      <div class="pub-item forthcoming">
+        <span class="pub-status forthcoming">Submitted · Peer Review</span>
+        <p class="pub-ref">
+          Neusser, C. (submitted). Succession in family businesses: Governance mechanisms and the transition from owner-management to external leadership.
+          <em>Journal of Family Business Strategy (JFBS)</em>.
+        </p>
+        <p class="pub-note">ABS-gelistetes Journal · Basiert auf DBA-Dissertation</p>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-status published">Dissertationsschrift</span>
+        <p class="pub-ref">
+          Neusser, C. (2026). <em>Navigating External Succession in German Mittelstand Family-Owned Manufacturing Companies</em>
+          [Doctoral dissertation, DBA Straight Pass]. Henley Business School, University of Reading.
+        </p>
+        <p class="pub-note">MSTM-Framework · 102 Interviews · 42 Unternehmen · Gioia-Methode</p>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-status published">Monographie / Buchbeitrag</span>
+        <p class="pub-ref">
+          Neusser, C. (2018). <em>Projektmanagement in mittelständischen Strukturen</em>.
+          Verlag Dr. Kovač.
+        </p>
+      </div>
+
+      <div class="pub-item forthcoming">
+        <span class="pub-status forthcoming">Forthcoming · Buchkapitel</span>
+        <p class="pub-ref">
+          Neusser, C. (forthcoming). Change governance in family businesses: The role of trust and mandate.
+          In [Hrsg.]. <em>[Sammelband Organization &amp; Change]</em>. Edward Elgar Publishing.
+        </p>
+      </div>
+
+      <div class="pub-item forthcoming">
+        <span class="pub-status forthcoming">Forthcoming · Zeitschrift</span>
+        <p class="pub-ref">
+          Neusser, C. (forthcoming). MSTM als Steuerungsrahmen für externe Nachfolge in Familienunternehmen.
+          <em>Zeitschrift für KMU und Entrepreneurship (ZfKE)</em>.
+        </p>
+      </div>
+
+      <div class="pub-item review">
+        <span class="pub-status review">Under Review</span>
+        <p class="pub-ref">
+          Neusser, C. (under review). Dynamic capabilities in post-succession family SMEs.
+          <em>Journal of Family Business Strategy (JFBS) / Family Business Review (FBR) / Entrepreneurship Theory &amp; Practice (ET&amp;P)</em>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FORSCHUNGSAGENDA
+══════════════════════════════════════════════════ -->
+<section id="forschung">
+  <div class="container">
+    <h2 class="section-title">Gemeinsame Forschungsbasis</h2>
+    <div class="section-bar"></div>
+    <p style="margin-bottom:1.5rem;">
+      Beide Bewerbungen teilen eine wissenschaftliche Basis: das <strong>MSTM-Framework (Neusser, 2026)</strong>
+      aus meiner DBA-Dissertation, eine etablierte Open-Access-Publikation im <em>Journal of Family Business Strategy</em>
+      (Neusser, 2025) sowie laufende Manuskripte unter Review bei <em>Family Business Review</em> und
+      <em>Entrepreneurship Theory &amp; Practice</em>. Aufbauend auf dieser Basis differenzieren sich die Forschungsprogramme
+      der beiden Stellen.
+    </p>
+
+    <h3 style="margin-bottom:0.75rem; color:var(--navy);">Forschungsspuren für die ABWL-Professur</h3>
+    <div class="research-grid">
+      <div class="research-card">
+        <h4>💰 Mittelstandscontrolling &amp; MSTM-Validierung</h4>
+        <ul>
+          <li>PLS-SEM-Validierung des MSTM-Frameworks</li>
+          <li>Performance-Measurement in KMU-Transformationen</li>
+          <li>Ziel-Journals: <em>JFBS, MAR, EAR, SBR</em></li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>🏦 Bilanzierung &amp; Risikoprozesse in Banken</h4>
+        <ul>
+          <li>IFRS 9-Umsetzung in Sparkassen/Volksbanken</li>
+          <li>Rating- und Kreditprozesse im Mittelstand</li>
+          <li>CSRD im Firmenkundenkreditgeschäft</li>
+          <li>Ziel-Journals: <em>JBF, EFM, Kredit und Kapital</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem; color:var(--navy);">Forschungsspuren für die Tourismus-/Dienstleistungs-Professur</h3>
+    <div class="research-grid">
+      <div class="research-card">
+        <h4>🛎️ Service-Transformation &amp; Customer Journey</h4>
+        <ul>
+          <li>Service-Transformations-Reifegrad für Tourismus-/Service-KMU</li>
+          <li>Process Mining im Hotel-/Gastro-Backoffice</li>
+          <li>Customer Journey Digital im Dreiländereck</li>
+          <li>Ziel-Journals: <em>JOSM, IJHM, Tourism Management</em></li>
+        </ul>
+      </div>
+      <div class="research-card">
+        <h4>🚆 Plattformökonomie &amp; Mobilität</h4>
+        <ul>
+          <li>Plattform-Resilienz für Service-Anbieter</li>
+          <li>Intermodale Customer Journey Schiene/Bus/Sharing</li>
+          <li>Geschäftsmodellinnovation Reisemittler</li>
+          <li>Ziel-Journals: <em>JTR, ATR, Transport Policy</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem; color:var(--navy);">Gemeinsamer Nachhaltigkeits-Forschungsstrang</h3>
+    <div style="background:var(--white); padding:1.5rem; border-radius:6px; box-shadow:0 1px 5px rgba(0,0,0,0.07); border-left:4px solid var(--gold);">
+      <p style="font-size:0.92rem;">Beide Stellen berühren Nachhaltigkeitsforschung. Mein eigenes Forschungsprogramm zur ökologischen Resilienz in
+        Familienunternehmen (Neusser, 2025, JFBS; Neusser &amp; Belitski, forthcoming, Elgar UNSDG Companion) lässt sich
+        in beide Richtungen verlängern: in CSRD/ESG-Controlling für die ABWL-Stelle und in nachhaltigen Tourismus
+        sowie Klimaadaption für die Tourismus-/Dienstleistungs-Stelle.</p>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:0.75rem; color:var(--navy);">Drittmittelpipeline (gemeinsam)</h3>
+    <div class="journal-pills">
+      <span class="j-pill">DFG Sachbeihilfe</span>
+      <span class="j-pill">ZIM (BMWK)</span>
+      <span class="j-pill">EU Horizon Europe Cluster 4/5/6</span>
+      <span class="j-pill">Interreg Oberrhein</span>
+      <span class="j-pill">DSGV / BWGV</span>
+      <span class="j-pill">Baden-Württemberg Stiftung</span>
+      <span class="j-pill">Stiftung Familienunternehmen</span>
+      <span class="j-pill">EU4Dual-Verbund</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PRAXISMANDATE
+══════════════════════════════════════════════════ -->
+<section id="mandate">
+  <div class="container">
+    <h2 class="section-title">Praxismandate</h2>
+    <div class="section-bar"></div>
+    <p style="margin-bottom:1.5rem;">
+      Vier exemplarische Mandate illustrieren die Breite und Tiefe meiner Praxisexpertise –
+      von internationalen Konzernstrukturen bis zum deutschen Mittelstand.
+    </p>
+
+    <div class="mandate-grid">
+      <div class="mandate-card">
+        <div class="company">Deutsche Bahn / Stiftungsfamilie BSW &amp; EWH</div>
+        <div class="role">Transformationsmanager · Frankfurt · 2022–2023</div>
+        <div class="detail">
+          Projektleitung Transformation Stiftungswesen der Deutschen Bahn.
+          Erarbeitung Gesamtstrategie, Umsetzungsplanung, PMO-Aufbau.
+          NGO · ca. 60 Mio. € · 500 MA.
+        </div>
+      </div>
+      <div class="mandate-card">
+        <div class="company">Oerlikon AG</div>
+        <div class="role">CRO · Pfäffikon/Deutschland · 2024</div>
+        <div class="detail">
+          Reorganisation und Strategiedefinition. Schließung aller fünf deutschen Produktionsstandorte.
+          Aufbau PMO, Verhandlung mit Banken und Gläubigern.
+          Mischkonzern · Ums. 1.500 Mio. € · 23.000 MA.
+        </div>
+      </div>
+      <div class="mandate-card">
+        <div class="company">Groupe Atlantic S.A.</div>
+        <div class="role">CRO · Paris / DACH / CEE · 2024–2025</div>
+        <div class="detail">
+          Restrukturierung fünf Werke in fünf Ländern. Neuausrichtung Gesamtgruppe Kalt-/Wärmespeicher.
+          Aufbau konzernweites PMO.
+          Mischkonzern · Ums. 2.800 Mio. € · 13.000 MA.
+        </div>
+      </div>
+      <div class="mandate-card">
+        <div class="company">Mittelstand &amp; Familienunternehmen</div>
+        <div class="role">Controlling · CFO · Turnaround · seit 2005</div>
+        <div class="detail">
+          Über 20 Mandate in eigentümer- und familiengeführten Industriebetrieben:
+          Aufbau Controlling-Architekturen, Working-Capital-Management,
+          Klima-/ESG-Kennzahlen, Nachfolge-Begleitung.
+          Branchen: Maschinenbau, Heiztechnik, Möbel, Chemie, Energie.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     KONTAKT
+══════════════════════════════════════════════════ -->
+<section id="kontakt">
+  <div class="container">
+    <h2 class="section-title">Kontakt &amp; Bewerbungswege</h2>
+    <div class="section-bar"></div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <strong style="color:var(--gold);">E-Mail</strong>
+          <p><a href="mailto:christian.neusser@me.com">christian.neusser@me.com</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong style="color:var(--gold);">Telefon</strong>
+          <p>+49 151 62 50 08 02</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong style="color:var(--gold);">Adresse</strong>
+          <p>Helene-Lange-Straße 28<br>91056 Erlangen</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🆔</div>
+        <div>
+          <strong style="color:var(--gold);">ORCID</strong>
+          <p>0000-0001-6484-1421</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;" class="stellen-grid">
+      <div style="background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:6px; border-left:4px solid var(--gold);">
+        <h4 style="color:var(--gold); margin-bottom:0.5rem;">A-Stelle ABWL</h4>
+        <p style="color:rgba(255,255,255,0.92); font-size:0.92rem; margin-bottom:0.5rem;">Verfahrensnummer 2026-LÖ-W-2 · Bewerbungsfrist 14.06.2026</p>
+        <p style="color:rgba(255,255,255,0.85); font-size:0.88rem;">Ansprechperson: Stefania Di Martino<br><a href="mailto:dimartino@dhbw-loerrach.de" style="color:var(--gold);">dimartino@dhbw-loerrach.de</a></p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); padding:1.5rem; border-radius:6px; border-left:4px solid var(--teal);">
+        <h4 style="color:var(--gold); margin-bottom:0.5rem;">B-Stelle Tourismus &amp; Dienstleistung</h4>
+        <p style="color:rgba(255,255,255,0.92); font-size:0.92rem; margin-bottom:0.5rem;">Verfahrensnummer 2025-LÖ-W-2 · Bewerbungsfrist 27.05.2026</p>
+        <p style="color:rgba(255,255,255,0.85); font-size:0.88rem;">Ansprechperson: Prof. Dr. Johannes Kern<br><a href="mailto:kern@dhbw-loerrach.de" style="color:var(--gold);">kern@dhbw-loerrach.de</a></p>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:2.5rem; color:rgba(255,255,255,0.75); font-size:0.85rem;">
+      Diese Bewerbungswebseite ist ein ergänzendes Begleitmaterial. Die formale Bewerbung erfolgt über das Online-Portal der DHBW Lörrach.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer>
+  <p>Dr. Christian Neusser, DBA, MBA, MSc &nbsp;·&nbsp; Doppelbewerbung W2 BWL · DHBW Lörrach &nbsp;·&nbsp; Verfahren 2026-LÖ-W-2 (ABWL) und 2025-LÖ-W-2 (Tourismus &amp; Dienstleistung)</p>
+  <p style="margin-top:0.5rem;">
+    <a href="mailto:christian.neusser@me.com">christian.neusser@me.com</a> &nbsp;·&nbsp;
+    ORCID <a href="https://orcid.org/0000-0001-6484-1421">0000-0001-6484-1421</a> &nbsp;·&nbsp;
+    <a href="https://cneusser.github.io/BwlScmPpm">cneusser.github.io/BwlScmPpm</a>
+  </p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const ham = document.getElementById('ham');
+    const menu = document.getElementById('navMenu');
+    ham.classList.toggle('active');
+    menu.classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('ham').classList.remove('active');
+    document.getElementById('navMenu').classList.remove('open');
+  }
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const el = document.querySelector(a.getAttribute('href'));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
